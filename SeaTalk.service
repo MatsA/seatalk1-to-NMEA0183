@@ -1,0 +1,15 @@
+[Unit]
+Description=SeaTalk daemon
+Documentation=http://pysselilivet.blogspot.com/2020/06/seatalk1-to-nmea-0183-converter-diy.html
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStartPre=/usr/local/bin/pigpiod
+ExecStart=python /usr/local/sbin/STALK_read.py
+Restart=always
+RestartSec=10
+SyslogIdentifier=SeaTalk
+
+[Install]
+WantedBy=multi-user.target
