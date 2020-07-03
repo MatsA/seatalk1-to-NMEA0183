@@ -26,7 +26,7 @@ if __name__ == '__main__':
 	except:
 		pass
 	
-    st1read.bb_serial_read_open(gpio, 4800,9)	# Read from chosen GPIO with 4800 Baudrate and 9 bit
+    	st1read.bb_serial_read_open(gpio, 4800,9)	# Read from chosen GPIO with 4800 Baudrate and 9 bit
 	st1read.bb_serial_invert(gpio, invert)		# Invert data
 	st1read.set_pull_up_down(gpio, pud)			# Set pull up/down
 	
