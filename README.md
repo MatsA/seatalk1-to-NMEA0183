@@ -1,5 +1,5 @@
 # seatalk1-to-NMEA0183
-A systemd service file to be used converting Raymarine SeaTalk 1 to NMEA 0183
+A Python program and a systemd service file to be used reading Raymarine SeaTalk 1 and forward is to a Signal K server.
 
 ![ST1_cable](https://user-images.githubusercontent.com/16189982/84571909-c16bf980-ad96-11ea-952c-3e7b8397f607.jpg)
 
