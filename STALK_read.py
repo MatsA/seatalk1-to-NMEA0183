@@ -7,6 +7,7 @@
 # If not, see <http://www.gnu.org/licenses/>.
 #
 # 2020-07-03 @MatsA Added function for inverting signal and using RPi internal pull up/down
+# 2020-08-18 Updated according to Thomas-GeDaD commits => reduce cpu consumption & Fix first character if 0x00 / string =00
 #
 
 import pigpio, time, socket, signal, sys
@@ -50,8 +51,13 @@ if __name__ == '__main__':
 						sock.sendto(data.encode('utf-8'), (ip, port))
 						print (data)
 						string2=str(hex(out_data[x]))
-						data=string2[2:]+ ","
+						string2_new=string2[2:]
+						if len(string2_new)==1:
+							string2_new="0"+string2_new
+						data=string2_new + ","
+
 					x+=2
+		time.sleep(0.01)
 				
 	except KeyboardInterrupt:
 		st1read.bb_serial_read_close(gpio)
