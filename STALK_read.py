@@ -63,7 +63,7 @@ if __name__ == '__main__':
 						data=string2_new + ","
 
 					x+=2
-		time.sleep(0.01)
+			time.sleep(0.01)
 				
 	except KeyboardInterrupt:
 		st1read.bb_serial_read_close(gpio)
