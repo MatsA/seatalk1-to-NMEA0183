@@ -7,7 +7,7 @@ After=syslog.target network-online.target
 Type=simple
 ExecStartPre=/usr/local/bin/pigpiod
 ExecStart=python /usr/local/sbin/STALK_read.py
-Restart=always
+Restart=on-failure
 RestartSec=10
 SyslogIdentifier=SeaTalk
 
