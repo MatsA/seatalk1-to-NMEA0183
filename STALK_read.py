@@ -8,14 +8,14 @@
 #
 # 2020-07-03 @MatsA Added function for inverting signal and using RPi internal pull up/down
 # 2020-08-18 Updated according to Thomas-GeDaD commits => reduce cpu consumption & Fix first character if 0x00 / string =00
-#
+# 2023-07-29 Updated to match the hardware update, no invert.
 
 import pigpio, time, socket, signal, sys
 
-port=4041	# Define udp port for sending
-ip= '127.0.0.1' # Define ip default localhost 127.0.0.1
-gpio= 4  	# Define gpio where the SeaTalk1 (yellow wire) is sensed
-invert = 1      # Define if input signal shall be inverted 0 => not inverted, 1 => Inverted 
+port = 4041	# Define udp port for sending
+ip = '127.0.0.1' # Define ip default localhost 127.0.0.1
+gpio = 4  	# Define gpio where the SeaTalk1 data(yellow wire) is sensed
+invert = 0      # Define if input signal shall be inverted 0 => not inverted, 1 => Inverted 
 pud = 2         # define if using internal RPi pull up/down 0 => No, 1= Pull down, 2=Pull up
 
 if __name__ == '__main__':
